@@ -209,15 +209,17 @@ section {
 
 /* ============ COUNTDOWN ============ */
 .countdown {
-    min-height: 100vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, #1f1520 0%, #2d1f2d 100%);
+    /* Efecto simétrico: Oscuro -> Claro -> Oscuro */
+    background: linear-gradient(180deg, #1f1520 0%, #2d1f2d 50%, #1f1520 100%);
     padding: 50px 20px;
     position: relative;
 }
+
 
 .countdown::before {
     content: '';
