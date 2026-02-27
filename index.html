@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebeca - Mis 15</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <!-- Audio -->
+    <audio id="audio" src="audio/audio.mp3" loop></audio>
+
+    <!-- Botón música -->
+    <button id="btn-musica" class="btn-musica" onclick="toggleMusica()">
+        <i class="fas fa-play"></i>
+    </button>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="hero-decoration">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-frame">
+                <div class="hero-number">
+                    <span>Mis</span>
+                    15
+                </div>
+            </div>
+            <h1 class="hero-name">Rebeca</h1>
+            <p class="hero-date">22 DE MARZO DE 2026</p>
+            <a href="#fotos" class="hero-btn" onclick="iniciarMusica(); document.getElementById('fotos').scrollIntoView({behavior: 'smooth'}); return false;">Descubrir</a>
+        </div>
+    </section>
+
+    <!-- Countdown -->
+    <section id="countdown" class="countdown" data-fecha="2026-03-22" data-hora="21:00">
+        <h2 class="countdown-title">La cuenta regresiva</h2>
+        <div class="countdown-timer">
+            <div class="count-block">
+                <div class="count-box">
+                    <span class="count-number" id="days">00</span>
+                </div>
+                <span class="count-label">Días</span>
+            </div>
+            <div class="count-block">
+                <div class="count-box">
+                    <span class="count-number" id="hours">00</span>
+                </div>
+                <span class="count-label">Horas</span>
+            </div>
+            <div class="count-block">
+                <div class="count-box">
+                    <span class="count-number" id="minutes">00</span>
+                </div>
+                <span class="count-label">Min</span>
+            </div>
+            <div class="count-block">
+                <div class="count-box">
+                    <span class="count-number" id="seconds">00</span>
+                </div>
+                <span class="count-label">Seg</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Padres -->
+    <section id="padres" class="padres">
+        <div class="padres-container">
+            <p class="padres-text">Con la bendicíon de</p>
+            <p class="padres-names">Juan Pérez <span>&</span> María González</p>
+        </div>
+    </section>
+
+    <!-- Fotos Slider -->
+    <section id="fotos" class="fotos">
+        <h2 class="fotos-title">La cumpleañera</h2>
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <div class="slider-slide">
+                    <img src="img/girl1.jpg" alt="Rebeca" loading="eager">
+                    <div class="slider-overlay">
+                        <p class="slider-name">Rebeca Martínez</p>
+                        <p class="slider-subtitle">15 años de elegancia</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="img/girl2.jpg" alt="Rebeca" loading="eager">
+                    <div class="slider-overlay">
+                        <p class="slider-name">Rebeca Martínez</p>
+                        <p class="slider-subtitle">Sus momentos especiales</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="img/girl3.jpg" alt="Rebeca" loading="eager">
+                    <div class="slider-overlay">
+                        <p class="slider-name">Rebeca Martínez</p>
+                        <p class="slider-subtitle">Lista para brillar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <div class="slider-dot active" onclick="goToSlide(0)"></div>
+            <div class="slider-dot" onclick="goToSlide(1)"></div>
+            <div class="slider-dot" onclick="goToSlide(2)"></div>
+        </div>
+    </section>
+
+    <!-- Fecha -->
+    <section id="fecha" class="fecha">
+        <div class="fecha-container">
+            <div class="fecha-icon">📅</div>
+            <p class="fecha-title">Cuando</p>
+            <p class="fecha-text">22 de Marzo</p>
+            <p class="fecha-detail">A las 21:00 horas</p>
+        </div>
+    </section>
+
+    <!-- Frase -->
+    <section id="frase" class="frase">
+        <div class="frase-container">
+            <p class="frase-text">"Que este nuevo capítulo de mi vida esté lleno de alegría, amor y momentos memorables junto a quienes más quiero."</p>
+            <p class="frase-autor">— Rebeca</p>
+        </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section id="ubicacion" class="ubicacion">
+        <div class="ubicacion-container">
+            <div class="ubicacion-icon">📍</div>
+            <p class="ubicacion-titulo">Donde</p>
+            <p class="ubicacion-lugar">Salón Prestige</p>
+            <p class="ubicacion-detalle">Av. Principal 567, Ciudad</p>
+            <a href="#" class="ubicacion-btn" onclick="return false;">Ver en Mapa</a>
+        </div>
+    </section>
+
+    <!-- Dress Code -->
+    <section id="dresscode" class="dresscode">
+        <div class="dresscode-container">
+            <h2 class="dresscode-title">Dress Code</h2>
+            <p class="dresscode-text">Elegante - Formal</p>
+            <div class="dresscode-colors">
+                <div class="color-swatch rose"></div>
+                <div class="color-swatch champagne"></div>
+                <div class="color-swatch nude"></div>
+                <div class="color-swatch blush"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerario -->
+    <section id="itinerario" class="itinerario">
+        <div class="itinerario-container">
+            <h2 class="itinerario-title">Itinerario</h2>
+            <div class="itinerario-item">
+                <div class="itinerario-icon">🥂</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-hora">21:00 HS</p>
+                    <p class="itinerario-actividad">Recepción</p>
+                    <p class="itinerario-detalle">Bienvenida a los invitados</p>
+                </div>
+            </div>
+            <div class="itinerario-item">
+                <div class="itinerario-icon">💃</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-hora">21:30 HS</p>
+                    <p class="itinerario-actividad">Inicio de la Fiesta</p>
+                    <p class="itinerario-detalle">Primer vals y coreografía</p>
+                </div>
+            </div>
+            <div class="itinerario-item">
+                <div class="itinerario-icon">🍰</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-hora">23:00 HS</p>
+                    <p class="itinerario-actividad">Corte de Torta</p>
+                    <p class="itinerario-detalle">El momento más dulce</p>
+                </div>
+            </div>
+            <div class="itinerario-item">
+                <div class="itinerario-icon">🎊</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-hora">00:00 HS</p>
+                    <p class="itinerario-actividad">Quinceañero</p>
+                    <p class="itinerario-detalle">El momento esperado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regalos -->
+    <section id="regalos" class="regalos">
+        <div class="regalos-container">
+            <div class="regalos-icon">🎁</div>
+            <h2 class="regalos-titulo">Regalos</h2>
+            <p class="regalos-texto">Tu presencia es el mejor regalo. Si deseas hacerme un presente, puedes hacerlo en efectivo o transferir a la cuenta que te proporcionaré al confirmar.</p>
+            <button class="regalos-btn" onclick="openModal()">Ver Datos Bancarios</button>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section id="instagram" class="instagram">
+        <div class="instagram-container">
+            <div class="instagram-icon">📸</div>
+            <h2 class="instagram-titulo">Comparte tus fotos</h2>
+            <p class="instagram-texto">Etiquetame en tus fotos de la fiesta para que pueda revivir cada momento especial.</p>
+            <p class="instagram-usuario">@rebeca_martinez</p>
+            <p class="instagram-hashtag-titulo">Usa el hashtag</p>
+            <p class="instagram-hashtag">#Mis15Rebeca</p>
+        </div>
+    </section>
+
+    <!-- Especial -->
+    <section id="especial" class="especial">
+        <div class="especial-container">
+            <div class="especial-icon">✨</div>
+            <p class="especial-texto">Celebra</p>
+            <p class="especial-texto">La Vida</p>
+        </div>
+    </section>
+
+    <!-- Confirmar -->
+    <section id="confirmar" class="confirmar">
+        <div class="confirmar-container">
+            <div class="confirmar-icon">💬</div>
+            <h2 class="confirmar-titulo">Confirmar Asistencia</h2>
+            <p class="confirmar-fecha">Confirma antes del 8 de Marzo</p>
+            <a href="#" class="confirmar-btn" onclick="alert('WhatsApp no configurado para demo'); return false;">Confirmar por WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer" class="footer">
+        <div class="footer-container">
+            <div class="footer-icon">💐</div>
+            <p class="footer-invitacion">Invitación</p>
+            <p class="footer-de">de</p>
+            <p class="footer-nombre">REBECA</p>
+            <p class="footer-texto">TE ESPERO</p>
+            <p class="footer-hashtag">#Mis15Rebeca</p>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <h3 class="modal-titulo">Datos de la Cuenta</h3>
+            <div class="modal-datos">
+                <p class="modal-banco">Banco Santander</p>
+                <p class="modal-alias">REBECA.15</p>
+                <p class="modal-titular">Titular: Rebeca Martínez</p>
+            </div>
+            <button class="modal-cerrar" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
